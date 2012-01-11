@@ -1,4 +1,4 @@
-class AddFieldsToOrderItem < ActiveRecord::Migration
+class ToAddFieldsToOrderItem < ActiveRecord::Migration
   def self.up
     add_column :order_items, :quantity, :integer
     add_column :order_items, :total, :decimal

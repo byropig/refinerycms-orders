@@ -1,4 +1,4 @@
-class AddPaymentTypeToOrders < ActiveRecord::Migration
+class ToAddPaymentTypeToOrders < ActiveRecord::Migration
   def self.up
     add_column :orders, :payment_type, :string
   end
