@@ -1,0 +1,45 @@
+--- 
+fr: 
+  plugins: 
+    orders: 
+      title: Orders
+    order_items: 
+      title: Order Items
+  admin: 
+    orders: 
+      actions: 
+        reorder: "R\xC3\xA9ordonner les Orders"
+        create_new: "Cr\xC3\xA9er un(e) nouve(au/l/lle) Order"
+        reorder_done: "Fin de r\xC3\xA9ordonnancement des Orders"
+      order: 
+        edit: Modifier ce(t/tte) order
+        delete: "Supprimer d\xC3\xA9finitivement ce(t/tte) order"
+        view_live_html: "Voir ce(t/tte) order <br/><em>(Ouvre une nouvelle fen\xC3\xAAtre)</em>"
+      records: 
+        no_items_yet: "Il n'y a actuellement aucun(e) Order. Cliquer sur \"Cr\xC3\xA9er un(e) nouve(au/l/lle) Order\" pour cr\xC3\xA9er votre premi(er/\xC3\xA8re) order."
+        title: Orders
+        sorry_no_results: "D\xC3\xA9sol\xC3\xA9 ! Aucun r\xC3\xA9sultat."
+        
+    order_items: 
+      actions: 
+        reorder: "R\xC3\xA9ordonner les Order Items"
+        create_new: "Cr\xC3\xA9er un(e) nouve(au/l/lle) Order Item"
+        reorder_done: "Fin de r\xC3\xA9ordonnancement des Order Items"
+      order_item: 
+        edit: Modifier ce(t/tte) order item
+        delete: "Supprimer d\xC3\xA9finitivement ce(t/tte) order item"
+        view_live_html: "Voir ce(t/tte) order item <br/><em>(Ouvre une nouvelle fen\xC3\xAAtre)</em>"
+      records: 
+        no_items_yet: "Il n'y a actuellement aucun(e) Order Item. Cliquer sur \"Cr\xC3\xA9er un(e) nouve(au/l/lle) Order Item\" pour cr\xC3\xA9er votre premi(er/\xC3\xA8re) order item."
+        title: Order Items
+        sorry_no_results: "D\xC3\xA9sol\xC3\xA9 ! Aucun r\xC3\xA9sultat."
+  orders: 
+    show: 
+      other: Autres Orders
+  shared: 
+    admin: 
+      image_picker: 
+        image: image
+  order_items: 
+    show: 
+      other: Autres Order Items

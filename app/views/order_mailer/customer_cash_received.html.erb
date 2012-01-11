@@ -1,0 +1,11 @@
+<h2>Good day <%= @customer.name  -%>,</h2>
+
+<h3>Thank you! We've just received payment for the following order: </h3>
+
+<%= render :partial => "mail_body" %>
+
+<p>The goods are on their way to you.</p>
+
+<p>Kind Regards</p>
+<%= RefinerySetting[:site_name] %>
+

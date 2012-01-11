@@ -1,0 +1,159 @@
+<%= form_for [:admin, @order] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+          :object => @order,
+          :include_object_name => true
+        } %>
+  
+  <div class="content">
+
+	  <div class='field'>    
+	    <h2>Order Number: <%= @order.order_number  -%></h2>
+	  </div>
+	
+	  <div class='customer_details'>
+		  <div class='label'>
+			  <div class='field'>
+			    <b>Order Status:</b>
+			  </div>
+			  <div class='field'>
+			    <b>Payment Type:</b>
+			  </div>
+		  </div>
+		  <div class='text'>
+			  <div class='field'>
+			    <%= @order.order_status  -%>
+			  </div>
+			  <div class='field'>
+			    <%= @order.payment_type  -%>
+			  </div>
+		  </div>
+	  </div>	
+
+	  <div class="address">
+		  <div class='second_label'>
+			  <div class='field'>
+			    <b>Date:</b>
+			  </div>
+		  </div>
+		  <div class='text'>
+			  <div class='field'>
+			    <%= @order.created_at.strftime("%d %B %Y") -%>
+			  </div>
+		  </div>		  	
+	  </div>
+
+	  <br><br>
+	  <div class='field'>
+	  	<h2>Customer Details</h2>
+	  </div>
+
+	  <div class="customer_details">
+	
+		  <div class='label'>
+			<div class='field'>	
+		    	<b>Name: </b>
+			</div>		  
+			<div class='field'>
+				<b>Surname: </b>
+			</div>		  
+			<div class='field'>
+				<b>Contact No: </b>
+			</div>
+		  </div>
+		  <div class='text'>
+			<div class='field'>
+				<%= link_to @order.customer.name, admin_customer_path(@order.customer)  -%>
+			</div>
+			<div class='field'>
+				<%= @order.customer.surname  -%>
+			</div>
+			<div class='field'>
+				<%= @order.customer.contact_number  -%>
+			</div>
+		  </div>
+	  </div>
+	  
+	  <div class="address">
+		  <div class='second_label'>
+		    <b>Address: </b>
+		  </div>
+		  <div class='text'>
+			<div class='field'>
+		    	<%= @order.address_line_1  -%>
+			</div>
+			<div class='field'>  
+		    	<%= @order.address_line_2  -%>
+			</div>
+			<div class='field'>		  	    
+		    	<%= @order.suburb  -%>
+			</div>
+			<div class='field'>		  
+		    	<%= @order.city  -%>
+			</div>
+			<div class='field'>		  
+		    	<%= @order.postal_code  -%>
+			</div>
+		  </div>
+	  </div>
+	  <div class="clear"></div>
+	  <br><BR>
+	  <div class='field'>
+	  	<h2>Order Details</h2>
+	  </div>
+	  <hr />
+	  
+	
+	  <table width="100%">
+		  <tr class="<%= cycle("even", "odd") %>"> 
+			<th><b>Product Name</b></th>
+			<th><b>Price</b></th>
+			<th><b>Quantity</b></th>
+			<th><b>Total Price</b></th>
+		  </tr>
+		  <% @order.order_items.each do |order_item| %>
+				<tr class="<%= cycle("odd", "even") %>"> 
+					<td style="border:1 solid grey;"><%= order_item.product_name  -%></td>
+					<td style="border:1 solid grey;"><%= rands(order_item.price)  -%></td>
+					<td style="border:1 solid grey;"><%= order_item.quantity  -%></td>
+					<td style="border:1 solid grey;"><%= rands(order_item.total)  -%></td>
+				</tr>
+	  	  <% end %>
+		  <tr class="<%= cycle("odd", "even") %>">
+				<td colspan="3"><b>Grand Total</b></td>
+				<td><%= rands(@order.grand_total)  -%></td>
+		  </tr>
+	  </table>
+
+  </div>
+
+  <div class="statuses">
+	<% if @order.order_status.present? %>
+	<h2>Update Status</h2>
+
+		<% if @order.order_status == 'Awaiting EFT Payment' %>
+			<%= link_to 'Payment Received', admin_order_update_new_path(:order_id => @order.id, :payment_type => @order.payment_type), :class => "status" %>	
+			<%= link_to 'Cancelled', admin_order_update_cancelled_path(:order_id => @order.id), :class => "status" %>
+		 	<%= link_to 'Stale', admin_order_update_stale_path(:order_id => @order.id), :class => "status" %>
+		<% elsif @order.order_status == 'Awaiting Credit Card Payment' %>
+			<!-- temporary measure to simulate payment successful from payment gateway -->
+				<%= link_to 'Payment Received', admin_order_update_new_path(:order_id => @order.id, :payment_type => @order.payment_type), :class => "status" %>
+			<!-- --------------------------------------------------------------------- -->
+		 	<%= link_to 'Stale', admin_order_update_stale_path(:order_id => @order.id), :class => "status" %>
+		<% elsif @order.order_status == 'New' %>
+			<%= link_to 'Processing', admin_order_update_processing_path(:order_id => @order.id), :class => "status" %>
+			<%= link_to 'Cancelled', admin_order_update_cancelled_path(:order_id => @order.id), :class => "status" %>
+		<% elsif @order.order_status == 'Processing' %>
+			<%= link_to 'Complete', admin_order_update_complete_path(:order_id => @order.id), :class => "status" %>
+			<%= link_to 'Cancelled', admin_order_update_cancelled_path(:order_id => @order.id), :class => "status" %>
+		<% end %>
+
+	<!-- 
+	<%#= link_to 'Awaiting EFT Payment', admin_order_update_awaiting_eft_path(:order_id => @order.id), :class => "status" %>
+	<%#= link_to 'Awaiting Credit Card Payment', admin_order_update_awaiting_cc_path(:order_id => @order.id), :class => "status" %>
+	 -->
+
+  	<% end %>
+  </div>
+ 
+  <div class="clear"></div>
+<% end -%>

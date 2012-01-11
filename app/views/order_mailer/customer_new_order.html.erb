@@ -1,0 +1,12 @@
+<h2>Good day <%= @customer.name  -%>,</h2>
+
+<h3>This serves to confirm that you've just place an order with: <%= RefinerySetting[:site_name] %></h3>
+
+<%= render :partial => "mail_body" %>
+
+<h2>Our Banking Details are as follows:</h2>
+
+<%= RefinerySetting.find_or_set[:banking_details, "Banking Deatils ... coming soon ... "] %>
+
+<%= RefinerySetting[:site_name] %>
+

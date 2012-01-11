@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="order_items">
+    <% @order_items.each do |order_item| %>
+      <li>
+        <%= link_to order_item.product_name, order_item_path(order_item) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

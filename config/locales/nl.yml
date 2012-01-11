@@ -1,0 +1,41 @@
+--- 
+nl: 
+  plugins: 
+    orders: 
+      title: Orders
+    order_items: 
+      title: Order Items
+  admin: 
+    orders: 
+      actions: 
+        reorder: Wijzig de volgorde van de Orders
+        create_new: Maak een nieuwe Order
+        reorder_done: Klaar met het wijzingen van de volgorde van de Orders
+      order: 
+        edit: Bewerk deze order
+        delete: Verwijder deze order voor eeuwig
+        view_live_html: Bekijk deze order op de website <br/><em>(opent een nieuw venster)</em>
+      records: 
+        no_items_yet: Er zijn nog geen Orders. Druk op 'Maak een nieuwe Order' om de eerste aan te maken.
+        title: Orders
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        
+    order_items: 
+      actions: 
+        reorder: Wijzig de volgorde van de Order Items
+        create_new: Maak een nieuwe Order Item
+        reorder_done: Klaar met het wijzingen van de volgorde van de Order Items
+      order_item: 
+        edit: Bewerk deze order item
+        delete: Verwijder deze order item voor eeuwig
+        view_live_html: Bekijk deze order item op de website <br/><em>(opent een nieuw venster)</em>
+      records: 
+        no_items_yet: Er zijn nog geen Order Items. Druk op 'Maak een nieuwe Order Item' om de eerste aan te maken.
+        title: Order Items
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+  orders: 
+    show: 
+      other: Andere Orders
+  order_items: 
+    show: 
+      other: Andere Order Items

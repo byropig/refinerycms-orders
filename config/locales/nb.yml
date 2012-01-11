@@ -1,0 +1,41 @@
+--- 
+nb: 
+  plugins: 
+    orders: 
+      title: Orders
+    order_items: 
+      title: Order Items
+  admin: 
+    orders: 
+      actions: 
+        reorder: "Endre rekkef\xC3\xB8lgen p\xC3\xA5 Orders"
+        create_new: Lag en ny Order
+        reorder_done: "Ferdig \xC3\xA5 endre rekkef\xC3\xB8lgen Orders"
+      order: 
+        edit: Rediger denne order
+        delete: Fjern denne order permanent
+        view_live_html: "Vis hvordan denne order ser ut offentlig <br/><em>(\xC3\xA5pner i et nytt vindu)</em>"
+      records: 
+        no_items_yet: "Det er ingen Orders enda. Klikk p\xC3\xA5 \"Lag en ny Order\" for \xC3\xA5 legge til din f\xC3\xB8rste order."
+        title: Orders
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        
+    order_items: 
+      actions: 
+        reorder: "Endre rekkef\xC3\xB8lgen p\xC3\xA5 Order Items"
+        create_new: Lag en ny Order Item
+        reorder_done: "Ferdig \xC3\xA5 endre rekkef\xC3\xB8lgen Order Items"
+      order_item: 
+        edit: Rediger denne order item
+        delete: Fjern denne order item permanent
+        view_live_html: "Vis hvordan denne order item ser ut offentlig <br/><em>(\xC3\xA5pner i et nytt vindu)</em>"
+      records: 
+        no_items_yet: "Det er ingen Order Items enda. Klikk p\xC3\xA5 \"Lag en ny Order Item\" for \xC3\xA5 legge til din f\xC3\xB8rste order item."
+        title: Order Items
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+  orders: 
+    show: 
+      other: Andre Orders
+  order_items: 
+    show: 
+      other: Andre Order Items

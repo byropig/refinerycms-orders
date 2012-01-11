@@ -1,0 +1,75 @@
+<% content_for :body_content_title do %>
+  <%= @order.order_number %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Order Number</h1>
+    <p>
+      <%=raw @order.order_number %>
+    </p>
+  </section>
+  <section>
+    <h1>Customer</h1>
+    <p>
+      <%=raw @order.customer %>
+    </p>
+  </section>
+  <section>
+    <h1>Order Status</h1>
+    <p>
+      <%=raw @order.order_status %>
+    </p>
+  </section>
+  <section>
+    <h1>Grand Total</h1>
+    <p>
+      <%=raw @order.grand_total %>
+    </p>
+  </section>
+  <section>
+    <h1>Address Line 1</h1>
+    <p>
+      <%=raw @order.address_line_1 %>
+    </p>
+  </section>
+  <section>
+    <h1>Address Line 2</h1>
+    <p>
+      <%=raw @order.address_line_2 %>
+    </p>
+  </section>
+  <section>
+    <h1>City</h1>
+    <p>
+      <%=raw @order.city %>
+    </p>
+  </section>
+  <section>
+    <h1>Postal Code</h1>
+    <p>
+      <%=raw @order.postal_code %>
+    </p>
+  </section>
+  <section>
+    <h1>Suburb</h1>
+    <p>
+      <%=raw @order.suburb %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="orders">
+      <% @orders.each do |order| %>
+        <li>
+          <%= link_to order.order_number, order_path(order) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

@@ -1,0 +1,45 @@
+--- 
+lolcat: 
+  plugins: 
+    orders: 
+      title: Orders
+    order_items: 
+      title: Order Items
+  admin: 
+    orders: 
+      actions: 
+        reorder: REORDR Orders
+        create_new: CREATE NEW Order
+        reorder_done: DUN REORDERIN Orders
+      order: 
+        edit: EDIT DIS order
+        delete: REMOOV DIS order FOREVR
+        view_live_html: VIEW DIS order LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+      records: 
+        no_items_yet: THAR R NO Orders YET. CLICK "CREATE NEW Order" 2 ADD UR FURST order.
+        title: Orders
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        
+    order_items: 
+      actions: 
+        reorder: REORDR Order Items
+        create_new: CREATE NEW Order Item
+        reorder_done: DUN REORDERIN Order Items
+      order_item: 
+        edit: EDIT DIS order item
+        delete: REMOOV DIS order item FOREVR
+        view_live_html: VIEW DIS order item LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+      records: 
+        no_items_yet: THAR R NO Order Items YET. CLICK "CREATE NEW Order Item" 2 ADD UR FURST order item.
+        title: Order Items
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+  orders: 
+    show: 
+      other: OTHR Orders
+  shared: 
+    admin: 
+      image_picker: 
+        image: IMAGE
+  order_items: 
+    show: 
+      other: OTHR Order Items

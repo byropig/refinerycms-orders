@@ -1,0 +1,45 @@
+--- 
+en: 
+  plugins: 
+    orders: 
+      title: Orders
+    order_items: 
+      title: Order Items
+  admin: 
+    orders:         	 
+      actions: 
+        reorder: Reorder Orders
+        create_new: Add New Order
+        reorder_done: Done Reordering Orders
+      order: 
+        edit: Edit this order
+        delete: Remove this order forever
+        view_live_html: View this order live <br/><em>(opens in a new window)</em>
+      records: 
+        no_items_yet: There are no Orders yet. Click "Add New Order" to add your first order.
+        title: Orders
+        sorry_no_results: Sorry! There are no results found.
+        
+    order_items: 
+      actions: 
+        reorder: Reorder Order Items
+        create_new: Add New Order Item
+        reorder_done: Done Reordering Order Items
+      order_item: 
+        edit: Edit this order item
+        delete: Remove this order item forever
+        view_live_html: View this order item live <br/><em>(opens in a new window)</em>
+      records: 
+        no_items_yet: There are no Order Items yet. Click "Add New Order Item" to add your first order item.
+        title: Order Items
+        sorry_no_results: Sorry! There are no results found.
+  orders: 
+    show: 
+      other: Other Orders
+  shared: 
+    admin: 
+      image_picker: 
+        image: image
+  order_items: 
+    show: 
+      other: Other Order Items

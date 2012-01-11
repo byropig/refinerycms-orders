@@ -1,0 +1,48 @@
+<% if Admin::OrdersController.searchable? %>
+  <ul class='search_list'>    	
+    <li class='not_a_link'>
+      <%= render :partial => "/shared/admin/search",
+                  :locals => {
+                    :url => admin_orders_path
+                  } %>
+    </li>
+  </ul>
+<% end %>
+
+<ul class='collapsible_menu'>
+  <li class='not_a_link'>
+    <%= link_to 'View Orders', '#' %>
+  </li>  
+  <li id=<%= params[:order_status].present? ? "selected" : "" %>>
+    <%= link_to "All", admin_orders_path %>
+  </li>
+  <li class=<%= params[:order_status] == "Awaiting EFT Payment" ? "selected" : "" %>>
+    <%= link_to "Awaiting EFT Payment", admin_orders_path(:order_status => "Awaiting EFT Payment") %>
+  </li>
+  <li class=<%= params[:order_status] == "Awaiting Credit Card Payment" ? "selected" : "" %>>
+    <%= link_to "Awaiting Credit Card Payment", admin_orders_path(:order_status => "Awaiting Credit Card Payment") %>
+  </li>
+  <li class=<%= params[:order_status] == "New" ? "selected" : "" %>>
+    <%= link_to "New", admin_orders_path(:order_status => "New") %>
+  </li>
+  <li class=<%= params[:order_status] == "Processing" ? "selected" : "" %>>
+    <%= link_to "Processing", admin_orders_path(:order_status => "Processing") %>
+  </li>
+  <li class=<%= params[:order_status] == "Complete" ? "selected" : "" %>>
+    <%= link_to "Complete", admin_orders_path(:order_status => "Complete") %>
+  </li> 
+  <li class=<%= params[:order_status] == "Cancelled" ? "selected" : "" %>>
+    <%= link_to "Cancelled", admin_orders_path(:order_status => "Cancelled") %>
+  </li>
+  <li class=<%= params[:order_status] == "Stale" ? "selected" : "" %>>
+    <%= link_to "Stale", admin_orders_path(:order_status => "Stale") %>
+  </li>
+</ul>
+
+<ul>
+	<li>
+      <%= link_to "Update who gets notified",
+                  notification_recipients_admin_orders_path(:dialog => true, :height => 200),
+                  :class => 'user_comment_icon' %>
+    </li>
+</ul>

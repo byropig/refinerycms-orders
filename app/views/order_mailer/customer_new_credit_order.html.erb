@@ -1,0 +1,8 @@
+<h2>Good day <%= @customer.name  -%>,</h2>
+
+<h3>This serves to confirm that you've just place an order with: <%= RefinerySetting[:site_name] %></h3>
+
+<%= render :partial => "mail_body" %>
+
+<%= RefinerySetting[:site_name] %>
+
