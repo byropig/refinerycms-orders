@@ -108,6 +108,7 @@
 			<th><b>Product Name</b></th>
 			<th><b>Price</b></th>
 			<th><b>Quantity</b></th>
+			<th><b>Stock Code</b></th>
 			<th><b>Total Price</b></th>
 		  </tr>
 		  <% @order.order_items.each do |order_item| %>
@@ -115,11 +116,12 @@
 					<td style="border:1 solid grey;"><%= order_item.product_name  -%></td>
 					<td style="border:1 solid grey;"><%= rands(order_item.price)  -%></td>
 					<td style="border:1 solid grey;"><%= order_item.quantity  -%></td>
+					<td style="border:1 solid grey;"><%= order_item.stock_code  -%></td>
 					<td style="border:1 solid grey;"><%= rands(order_item.total)  -%></td>
 				</tr>
 	  	  <% end %>
 		  <tr class="<%= cycle("odd", "even") %>">
-				<td colspan="3"><b>Grand Total</b></td>
+				<td colspan="4"><b>Grand Total</b></td>
 				<td><%= rands(@order.grand_total)  -%></td>
 		  </tr>
 	  </table>
