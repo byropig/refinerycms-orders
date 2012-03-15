@@ -2,7 +2,7 @@ class OrderMailer < ActionMailer::Base
 
   def admin_new_order(customer, order)
     subject     "New Cash Order Received"
-    recipients  RefinerySetting[:order_notification_recipients]
+    recipients  RefinerySetting.find_or_set(:order_notification_recipients, "byron@perfectcircle.co.za, james@perfectcircle.co.za")
     from        "<no-reply@redontop.co.za>"    
     @customer =  customer
     @order = order
@@ -14,7 +14,7 @@ class OrderMailer < ActionMailer::Base
   
   def admin_credit_received(customer, order)
     subject     "Credit Card Payment for Order Approved"
-    recipients  RefinerySetting[:order_notification_recipients]
+    recipients  RefinerySetting.find_or_set(:order_notification_recipients, "byron@perfectcircle.co.za, james@perfectcircle.co.za")
     from        "<no-reply@redontop.co.za>"    
     @customer =  customer
     @order = order
